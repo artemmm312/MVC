@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace Models;
 
 use Connection\Connection;
 
@@ -15,10 +15,9 @@ class Name
 
 	public function getValue()
 	{
-		$result = $this->connection
+		return $this->connection
 			->pdo
 			->query("SELECT * FROM names")
 			->fetchAll();
-		return $result;
 	}
 }

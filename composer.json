@@ -1,0 +1,18 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Connection\\": "Connection/",
+            "Controllers\\": "Controllers/",
+            "Router\\": "Router/",
+            "Models\\": "Models/",
+            "Views\\": "Views/"
+        }
+    },
+    "authors": [
+        {
+            "name": "artemmm312",
+            "email": "artemmm312@gmail.com"
+        }
+    ],
+    "require": {}
+}

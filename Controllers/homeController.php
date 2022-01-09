@@ -8,12 +8,12 @@ use Models\Name;
 
 class homeController
 {
-	public function actionMain()
+	public function actionMain(): void
 	{
 		// Рендер главной страницы портала
 		View::render('index');
 	}
-	public function actionPeople()
+	public function actionPeople(): void
 	{
 		// Создаем модель
 		$model = new Name();

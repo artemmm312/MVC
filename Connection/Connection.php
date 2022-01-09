@@ -6,8 +6,8 @@ use PDO;
 
 class Connection
 {
-	private static $instance;
-	private $pdo;
+	private static Connection $instance;
+	private PDO $pdo;
 
 	private function __construct()
 	{
@@ -23,22 +23,22 @@ class Connection
 		$this->pdo = new PDO($dsn, $user, $password, $opt);
 	}
 
-	public static function getInstance()
+	public static function getInstance(): Connection
 	{
 		if (!isset(self::$instance))
 			self::$instance = new self();
 		return self::$instance;
 	}
 
-	public function __get($name)
+	public function __get(string $name): PDO
 	{
 		if ($name === 'pdo')
 			return $this->pdo;
 	}
 
-	private function __clone() {}
+	private function __clone(): void {}
 
-	public function __wakeup()
+	public function __wakeup(): void
 	{
 		throw new \Exception("Cannot unserialize a singleton.");
 	}

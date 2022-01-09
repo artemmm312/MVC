@@ -6,14 +6,15 @@ use Connection\Connection;
 
 class Name
 {
-	private $connection;
+	private Connection $connection;
 
 	public function __construct()
 	{
 		$this->connection = Connection::getInstance();
 	}
 
-	public function getValue()
+	//Получаем данные из базы данных
+	public function getValue(): array
 	{
 		return $this->connection
 			->pdo

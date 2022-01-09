@@ -6,7 +6,7 @@ use ErrorException;
 
 class Router
 {
-	public static function run()
+	public static function run(): void
 	{
 		// Получаем URL запроса
 		$path = $_SERVER['REQUEST_URI'];

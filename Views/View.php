@@ -4,7 +4,7 @@ namespace Views;
 
 class View
 {
-	public static function render(string $path, array $data = [])
+	public static function render(string $path, array $data = []): void
 	{
 		// Получаем путь, где лежат все представления
 		$fullPath = __DIR__ . './' . $path . '.php';
